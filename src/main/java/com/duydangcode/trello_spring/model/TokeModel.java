@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class TokeModel {
   @Id
   @DocumentReference(collection = "Users")
-  private ObjectId _id;
+  private String _id;
   private String role;
   private String accessToken;
   private String refreshToke;

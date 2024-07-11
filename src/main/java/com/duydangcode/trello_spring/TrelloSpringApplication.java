@@ -10,8 +10,8 @@ public class TrelloSpringApplication {
 
 	public static void main(String[] args) {
 		var context = SpringApplication.run(TrelloSpringApplication.class, args);
-		// Arrays.stream(context.getBeanDefinitionNames()).forEach((name) ->
-		// System.out.println(name));
+		// System.out.println(context.getBean("encoder"));
+
 	}
 
 }

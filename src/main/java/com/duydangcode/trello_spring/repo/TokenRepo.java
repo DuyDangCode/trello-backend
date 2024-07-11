@@ -5,6 +5,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.duydangcode.trello_spring.model.TokeModel;
 
-public interface TokenRepo extends MongoRepository<TokeModel, ObjectId> {
+public interface TokenRepo extends MongoRepository<TokeModel, String> {
 
 }

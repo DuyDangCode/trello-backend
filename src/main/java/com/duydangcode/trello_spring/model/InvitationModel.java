@@ -1,6 +1,5 @@
 package com.duydangcode.trello_spring.model;
 
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.DocumentReference;
@@ -15,13 +14,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class InvitationModel {
   @Id
-  private ObjectId _id;
+  private String _id;
   @DocumentReference(collection = "Users")
-  private ObjectId inviterId;
+  private String inviterId;
   @DocumentReference(collection = "Users")
-  private ObjectId inviteeId;
+  private String inviteeId;
   private String type;
   @DocumentReference(collection = "Boards")
-  private ObjectId boardId;
-  private boolean _isDelete;
+  private String boardId;
+  private boolean _isDelete = false;
 }
