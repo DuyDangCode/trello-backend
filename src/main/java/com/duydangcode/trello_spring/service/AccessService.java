@@ -19,10 +19,12 @@ public class AccessService {
 
   private final UserRepo userRepo;
   private final PasswordEncoder passwordEncoder;
+  private final KeyTokenService keyTokenService;
 
   public UserModel signIn(SignInForm signInForm) throws BadRequestException {
     UserModel holderUser = userRepo.findOneByUsername(signInForm.getUsername())
         .orElseThrow(() -> new BadRequestException("User not found"));
+
     return holderUser;
   }
 
@@ -35,6 +37,8 @@ public class AccessService {
         .password(signUpForm.getPassword())
         .email(signUpForm.getEmail())
         .build();
+
+    newUser.setTokens(keyTokenService.generateTokens(newUser));
 
     return newUser;
   }

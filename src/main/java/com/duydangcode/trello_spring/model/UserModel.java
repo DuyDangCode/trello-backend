@@ -13,6 +13,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.duydangcode.trello_spring.dto.TokensDTO;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -32,6 +34,7 @@ public class UserModel implements UserDetails {
   private String username;
   private String displayName;
   private String avatar;
+  private TokensDTO tokens;
   @Builder.Default
   private boolean _isActivate = true;
   @Builder.Default

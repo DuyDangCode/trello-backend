@@ -38,8 +38,8 @@ public class SpringSecurityConfig {
   }
 
   @Bean
-  public AuthenticationProvider authenticationProvider() {
-    DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
+  public AuthenticationProvider authenticationProvider()      {
+    DaoAuthenticationProvider daoAuthenticationProvider =    new DaoAuthenticationProvider();
     daoAuthenticationProvider.setUserDetailsService(userDetailsService());
     daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
     return daoAuthenticationProvider;
@@ -48,6 +48,6 @@ public class SpringSecurityConfig {
   @Bean
   public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration)
       throws Exception {
-    return authenticationConfiguration.getAuthenticationManager();
+    return        authenticationConfiguration.getAuthenticationManager();
   }
 }
